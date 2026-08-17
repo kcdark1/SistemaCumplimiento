@@ -1,0 +1,229 @@
+{
+  "titulo": "Informe de sostenibilidad",
+  "subtitulo": "Aplicación práctica de NIIF S1 (información general) y NIIF S2 (clima)",
+  "caso": "Administración de infraestructura de transporte terrestre — FTTG",
+  "declaracionReferencia": "Este informe se elaboró tomando como referencia las Normas NIIF de Sostenibilidad NIIF S1 y NIIF S2 (ISSB). No se declara conformidad plena: la entidad aplica el marco como mejor práctica internacional, no por mandato legal en Ecuador, y utiliza las disposiciones de transición de primer año.",
+  "pilaresCore": [
+    {
+      "id": "gobernanza",
+      "numero": "01",
+      "nombre": "Gobernanza",
+      "pregunta": "¿Quién vigila los temas de sostenibilidad y cómo lo hace?",
+      "referencias": ["NIIF S1 párr. 27", "NIIF S2 párr. 6"]
+    },
+    {
+      "id": "estrategia",
+      "numero": "02",
+      "nombre": "Estrategia",
+      "pregunta": "¿Cuál es el impacto en el negocio, sobre la mesa?",
+      "referencias": ["NIIF S1 párr. 30-42", "NIIF S2 párr. 10-22"]
+    },
+    {
+      "id": "riesgo",
+      "numero": "03",
+      "nombre": "Gestión de riesgos",
+      "pregunta": "Identificar, priorizar y supervisar —siempre.",
+      "referencias": ["NIIF S1 párr. 44", "NIIF S2 párr. 25"]
+    },
+    {
+      "id": "metricas",
+      "numero": "04",
+      "nombre": "Métricas y metas",
+      "pregunta": "Indicadores verificables, no promesas.",
+      "referencias": ["NIIF S1 párr. 45-53", "NIIF S2 párr. 28-37"]
+    }
+  ],
+  "capitulos": [
+    {
+      "id": "alcance",
+      "numero": "0",
+      "titulo": "Alcance y carácter de aplicación",
+      "puntos": [
+        {
+          "titulo": "Adopción como marco de referencia",
+          "norma": "NIIF S1 párr. 3, 8-9",
+          "contenido": "Las Normas NIIF S1/S2 no son de aplicación obligatoria en Ecuador. La FTTG las adopta como marco de mejores prácticas internacionales. Este informe se elaboró tomando como referencia NIIF S1 y NIIF S2, y evita la frase “de conformidad con las Normas NIIF de Sostenibilidad”, reservada para el cumplimiento integral."
+        },
+        {
+          "titulo": "Lenguaje de conformidad",
+          "norma": "NIIF S1 párr. 72",
+          "contenido": "Dado el tamaño de la entidad y las brechas identificadas en el diagnóstico (inventario GEI, plan de transición, supervisión del Directorio), lo correcto es declarar referencia, no conformidad plena. Esta distinción protege la validez del informe ante un lector externo."
+        }
+      ]
+    },
+    {
+      "id": "gobernanza",
+      "numero": "1",
+      "titulo": "Gobernanza",
+      "puntos": [
+        {
+          "titulo": "Órgano responsable",
+          "norma": "NIIF S1 párr. 27(a); NIIF S2 párr. 6(a)",
+          "contenido": "La supervisión operativa recae en la Dirección de Medio Ambiente y Responsabilidad Social (DMARS), liderada por su Directora. De ella depende un Analista de Medio Ambiente que consolida indicadores y elabora informes mensuales. La Gerencia General firma el acta de rendición de cuentas ciudadana. No se identificó un órgano de gobierno corporativo (Directorio) con mandato formal de supervisión de riesgos y oportunidades de sostenibilidad."
+        },
+        {
+          "titulo": "Mandatos y funciones",
+          "norma": "NIIF S1 párr. 27(a)(i); NIIF S2 párr. 6(a)(i)",
+          "contenido": "Existe cadena documental elaborado / revisado / aprobado en los informes del SGA. No constan, en cambio, términos de referencia del Directorio ni perfiles de cargo que asignen explícitamente la supervisión climática a nivel de gobierno."
+        },
+        {
+          "titulo": "Competencias",
+          "norma": "NIIF S1 párr. 27(a)(ii); NIIF S2 párr. 6(a)(ii)",
+          "contenido": "El área técnica posee competencias en ISO 14001:2015 y normativa ambiental ecuatoriana. La entrevista confirma que NIIF S1/S2 no se conocían en la institución. Se recomienda un plan de capacitación del órgano de gobierno y de la alta dirección en el marco ISSB."
+        },
+        {
+          "titulo": "Frecuencia de información",
+          "norma": "NIIF S1 párr. 27(a)(iii); NIIF S2 párr. 6(a)(iii)",
+          "contenido": "Los indicadores ambientales se reportan mensualmente al interior del SGA. La rendición de cuentas a la ciudadanía es anual. No existe un formato periódico específico de reporte climático al Directorio."
+        },
+        {
+          "titulo": "Decisiones estratégicas",
+          "norma": "NIIF S1 párr. 27(a)(iv); NIIF S2 párr. 6(a)(iv)",
+          "contenido": "Se gestiona un estudio de factibilidad para paneles solares y el Plan Estratégico 2026-2030 incorpora un Eje 4 de Sostenibilidad Ambiental y Social. No hay evidencia de que cada transacción relevante (p. ej. un nuevo generador) incorpore de forma documentada el análisis climático previo."
+        },
+        {
+          "titulo": "Rol de la gerencia",
+          "norma": "NIIF S1 párr. 27(b); NIIF S2 párr. 6(b)",
+          "contenido": "La operación diaria (recolección de datos, informes, PMA) la ejecuta DMARS. La barrera clave es la falta de comunicación entre Direcciones para consolidar información: no existe un comité de sostenibilidad interdireccional."
+        }
+      ]
+    },
+    {
+      "id": "estrategia",
+      "numero": "2",
+      "titulo": "Estrategia",
+      "puntos": [
+        {
+          "titulo": "2.1 Riesgos y oportunidades",
+          "norma": "NIIF S1 párr. 30; NIIF S2 párr. 10",
+          "contenido": "Los riesgos físicos agudos (inundación, cortes de energía, vectores) y crónicos (temperatura, humedad, corrosión) están identificados. Los riesgos de transición (regulatorio, tecnológico, de mercado y reputacional) se incorporan en este ciclo a partir del diagnóstico, dado que la entrevista confirmó que ese ejercicio no se había realizado. Las oportunidades materiales son la eficiencia energética (LED, paneles solares, agua) y el acceso a financiamiento verde."
+        },
+        {
+          "titulo": "2.2 Modelo de negocio y cadena de valor",
+          "norma": "NIIF S1 párr. 32; NIIF S2 párr. 13",
+          "contenido": "La FTTG genera valor administrando infraestructura de tres terminales (TTG, TTMP, TTMC), cobrando tasas de uso de andenes y coordinando con cooperativas. La cadena de valor incluye cooperativas de transporte, concesionarios y locales comerciales, carretilleros organizados, proveedores de mantenimiento y el municipio como regulador. Los riesgos climáticos afectan de forma diferenciada a cada eslabón: la inundación detiene cooperativas y usuarios; la normativa de emisiones impacta a las cooperativas; la reputación afecta la relación con entes de control."
+        },
+        {
+          "titulo": "2.3 Estrategia, toma de decisiones y plan de transición",
+          "norma": "NIIF S2 párr. 14(a)-(c)",
+          "contenido": "Existen iniciativas (estudio de paneles solares, Eje 4 del Plan 2026-2030, cooperativas con unidades más modernas) pero no un plan de transición climática formal. Un plan válido exigiría: (1) meta de reducción de emisiones, (2) cronograma con fechas y (3) fuente de financiamiento. Hoy estos tres elementos existen como intención, no como plan estructurado. Este informe declara esa brecha de forma explícita."
+        },
+        {
+          "titulo": "2.4 Efectos financieros actuales y previstos",
+          "norma": "NIIF S1 párr. 34-40; NIIF S2 párr. 15-21",
+          "contenido": "No se ha cuantificado el ahorro por eficiencia energética ni el impacto financiero potencial de inundaciones o cortes de energía. No existen pólizas para eventos climáticos extremos. Sí hay un rubro presupuestario asociado al proyecto solar. Se acoge la exención de cuantificación: los efectos se describen de forma cualitativa (suspensión de rutas, gasto de climatización, inversión en carga eléctrica) hasta disponer de capacidad técnica de cálculo."
+        },
+        {
+          "titulo": "2.5 Resiliencia climática",
+          "norma": "NIIF S1 párr. 41-42; NIIF S2 párr. 22",
+          "contenido": "La FTTG cuenta con plan de emergencias ambientales y simulacros periódicos en sus tres terminales. No se ha desarrollado un análisis de escenarios climáticos formal ni indicadores de alerta temprana. Conforme al Apéndice B de NIIF S1, se aplica un análisis cualitativo razonado (inundaciones más frecuentes, temperaturas sostenidas) sin modelo numérico complejo, justificado por costo o esfuerzo desproporcionado."
+        }
+      ]
+    },
+    {
+      "id": "riesgo",
+      "numero": "3",
+      "titulo": "Gestión del riesgo",
+      "puntos": [
+        {
+          "titulo": "Ciclo de cuatro pasos",
+          "norma": "NIIF S1 párr. 44; NIIF S2 párr. 25",
+          "contenido": "Identificar: fuentes documentales internas, entrevista a DMARS y registros meteorológicos operativos de Guayaquil. Evaluar: semáforo de probabilidad e impacto según la guía de criterios de la matriz FTTG. Priorizar: se atienden primero los riesgos Alto y Medio-Alto derivados de los factores ASG seleccionados. Supervisar: DMARS da seguimiento mensual de indicadores y semestral de derrames; este sistema de aseguramiento asigna evidencia y responsable a cada ítem material."
+        },
+        {
+          "titulo": "Integración con el riesgo institucional",
+          "norma": "NIIF S1 párr. 44(c); NIIF S2 párr. 25(c)",
+          "contenido": "La gestión ambiental opera dentro del SGA de forma relativamente paralela al resto de la gestión de riesgos corporativa. La recomendación de este informe es integrar la matriz climática al proceso institucional general, de modo que no quede como sistema aislado."
+        }
+      ]
+    },
+    {
+      "id": "metricas",
+      "numero": "4",
+      "titulo": "Métricas y objetivos",
+      "puntos": [
+        {
+          "titulo": "Emisiones GEI",
+          "norma": "NIIF S2 párr. 29(a)",
+          "contenido": "Alcance 1: combustibles propios (generadores de respaldo, vehículos de servicio). Alcance 2: electricidad consumida en TTG, TTMP y TTMC (394.830 / 92.730 / 51.910 kWh/mes). Alcance 3 selectivo: residuos, bienes adquiridos y desplazamiento del personal. No existe inventario consolidado. Se acoge el alivio de Alcance 3 y el alivio metodológico de GEI para el primer año. Los datos de consumo ya permiten construir Alcance 1 y 2 aplicando un factor de emisión declarado."
+        },
+        {
+          "titulo": "Métricas operativas disponibles",
+          "norma": "NIIF S1 párr. 46; NIIF S2 párr. 28",
+          "contenido": "PTAR 100% de cumplimiento (4 periodos). Reciclaje: 1.177 kg en el mes y 6.145 kg acumulados ene–may 2026. Derrames: 0. Agua: 9.373 / 1.069 / 902 m³. Mes crítico: enero. PMA evaluado en los tres terminales. Estas métricas se reportan con la frecuencia y la fuente documentada en la vista de trazabilidad."
+        },
+        {
+          "titulo": "Métricas sectoriales SASB",
+          "norma": "NIIF S1 párr. 48; NIIF S2 párr. 28(b), 32",
+          "contenido": "Adaptadas al rol de administrador de infraestructura de transporte terrestre: (1) emisiones y combustible de vehículos que operan en la terminal; (2) contaminantes de aire local por diésel en el patio; (3) tasas de accidentes y seguridad operativa; (4) condiciones laborales y rotación de personal operativo."
+        },
+        {
+          "titulo": "Objetivos",
+          "norma": "NIIF S1 párr. 51-53; NIIF S2 párr. 33-37",
+          "contenido": "No hay metas numéricas de reducción con plazos. Este primer ejercicio recomienda: (a) construir el inventario GEI de Alcance 1 y 2 en el primer año; (b) formalizar una meta de reducción de consumo eléctrico ligada al proyecto solar, con hito de factibilidad y fuente de financiamiento; (c) si en el futuro se fijara una meta neta, divulgar también la meta bruta."
+        }
+      ]
+    },
+    {
+      "id": "juicios",
+      "numero": "5",
+      "titulo": "Juicios e incertidumbre de medición",
+      "puntos": [
+        {
+          "titulo": "Juicios significativos",
+          "norma": "NIIF S1 párr. 74",
+          "contenido": "Se consideraron materiales los factores ASG priorizados en este ciclo (inundación, energía, GEI, gobernanza, normativas de transición y oportunidades de eficiencia/financiamiento). El criterio fue la combinación de evidencia documental, confirmación en entrevista y cruce probabilidad × impacto de la matriz."
+        },
+        {
+          "titulo": "Incertidumbre de medición",
+          "norma": "NIIF S1 párr. 77-82",
+          "contenido": "Los indicadores de agua, energía, PTAR y residuos provienen del Informe de Seguimiento de mayo 2026. Las emisiones GEI no se presentan como medición exacta porque aún no hay inventario; cualquier cifra futura basada en factores de emisión deberá declarar la tabla utilizada y su nivel de confianza. Las mediciones puntuales de gases del PMA no se integraron al inventario."
+        }
+      ]
+    },
+    {
+      "id": "presentacion",
+      "numero": "6",
+      "titulo": "Requerimientos generales de presentación",
+      "puntos": [
+        {
+          "titulo": "Declaración de cumplimiento",
+          "norma": "NIIF S1 párr. 72",
+          "contenido": "El informe toma como referencia NIIF S1 y NIIF S2. No se declara conformidad plena."
+        },
+        {
+          "titulo": "Información conectada y coherencia",
+          "norma": "NIIF S1 párr. 21 y 23",
+          "contenido": "El riesgo físico de inundación se conecta con la ausencia de seguros y con pérdidas operativas por suspensión de rutas. El consumo eléctrico se conecta con Alcance 2 y con la oportunidad de paneles solares. Los supuestos cualitativos son consistentes a lo largo de gobernanza, estrategia, riesgos y métricas."
+        },
+        {
+          "titulo": "Fuentes de orientación y esfuerzo desproporcionado",
+          "norma": "NIIF S1 párr. 55-59; Apéndice B",
+          "contenido": "En ausencia de un requerimiento específico se consulta SASB Road Transportation, adaptada al administrador de infraestructura. Se usa la mejor información razonable disponible sin costo o esfuerzo indebido (cinco fuentes primarias internas)."
+        },
+        {
+          "titulo": "Ubicación, frecuencia y comparabilidad",
+          "norma": "NIIF S1 párr. 60-71",
+          "contenido": "Documento independiente, frecuencia anual alineada a la rendición de cuentas. En este primer año no se presentan cifras comparativas."
+        }
+      ]
+    },
+    {
+      "id": "transicion",
+      "numero": "7",
+      "titulo": "Disposiciones de transición",
+      "puntos": [
+        {
+          "titulo": "Enfoque climate-first",
+          "norma": "NIIF S1 (transición)",
+          "contenido": "El primer ejercicio privilegia los temas climáticos de NIIF S2 y deja el resto de sostenibilidad general de NIIF S1 para profundizar en el segundo año, sin omitir los factores sociales y de gobernanza ya documentados."
+        },
+        {
+          "titulo": "Alivios de primer año",
+          "norma": "NIIF S2 (transición)",
+          "contenido": "Se acogen: (1) alivio de información comparativa; (2) alivio de Alcance 3; (3) alivio metodológico de GEI. Estos alivios existen precisamente para instituciones que, como la FTTG, están comenzando el camino."
+        }
+      ]
+    }
+  ]
+}

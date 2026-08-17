@@ -1,0 +1,198 @@
+{
+  "responsables": [
+    {
+      "id": "dir-mars",
+      "cargo": "Directora de Medio Ambiente y Responsabilidad Social",
+      "area": "DMARS",
+      "rol": "Elaboración y supervisión técnica"
+    },
+    {
+      "id": "analista-ma",
+      "cargo": "Analista de Medio Ambiente",
+      "area": "DMARS",
+      "rol": "Consolidación de indicadores e informes mensuales"
+    },
+    {
+      "id": "gerencia",
+      "cargo": "Gerencia General",
+      "area": "Alta dirección",
+      "rol": "Aprobación y rendición de cuentas"
+    },
+    {
+      "id": "directorio",
+      "cargo": "Directorio",
+      "area": "Gobierno corporativo",
+      "rol": "Supervisión estratégica (brecha: mandato no documentado)"
+    }
+  ],
+  "items": [
+    {
+      "id": "ev-ptar",
+      "indicador": "Cumplimiento parámetros PTAR",
+      "dato": "100% (4 periodos)",
+      "factorId": "ptar",
+      "fuenteId": "indicadores-2026",
+      "responsableId": "analista-ma",
+      "revisorId": "dir-mars",
+      "estado": "Evidencia disponible",
+      "periodicidad": "Mensual",
+      "notas": "Monitoreo de la planta de tratamiento de aguas residuales. Verificable en el informe de seguimiento de mayo 2026."
+    },
+    {
+      "id": "ev-reciclaje",
+      "indicador": "Materiales reciclables recuperados",
+      "dato": "1.177 kg / 6.145 kg acum.",
+      "factorId": "residuos",
+      "fuenteId": "indicadores-2026",
+      "responsableId": "analista-ma",
+      "revisorId": "dir-mars",
+      "estado": "Evidencia disponible",
+      "periodicidad": "Mensual",
+      "notas": "Cartón, PET y archivo. Corroborable con registros del SGA y acciones DMARS 2025."
+    },
+    {
+      "id": "ev-agua",
+      "indicador": "Consumo de agua por terminal",
+      "dato": "9.373 / 1.069 / 902 m³",
+      "factorId": "agua",
+      "fuenteId": "indicadores-2026",
+      "responsableId": "analista-ma",
+      "revisorId": "dir-mars",
+      "estado": "Evidencia disponible",
+      "periodicidad": "Mensual",
+      "notas": "Promedio ene–abr 2026. Mes crítico: enero."
+    },
+    {
+      "id": "ev-energia",
+      "indicador": "Consumo de energía por terminal",
+      "dato": "394.830 / 92.730 / 51.910 kWh",
+      "factorId": "energia",
+      "fuenteId": "indicadores-2026",
+      "responsableId": "analista-ma",
+      "revisorId": "dir-mars",
+      "estado": "Evidencia disponible",
+      "periodicidad": "Mensual",
+      "notas": "Insumo para Alcance 2. Facturas eléctricas existentes; falta aplicar factor de emisión."
+    },
+    {
+      "id": "ev-derrames",
+      "indicador": "Incidentes por derrames",
+      "dato": "0 registrados",
+      "factorId": "ptar",
+      "fuenteId": "indicadores-2026",
+      "responsableId": "analista-ma",
+      "revisorId": "dir-mars",
+      "estado": "Evidencia disponible",
+      "periodicidad": "Semestral",
+      "notas": "Indicador en seguimiento semestral, sin eventos en el periodo evaluado."
+    },
+    {
+      "id": "ev-pma",
+      "indicador": "Cumplimiento PMA TTG / TTMP / TTMC",
+      "dato": "Evaluado en tres terminales",
+      "factorId": "ptar",
+      "fuenteId": "indicadores-2026",
+      "responsableId": "dir-mars",
+      "revisorId": "gerencia",
+      "estado": "Evidencia disponible",
+      "periodicidad": "Mensual",
+      "notas": "Plan de Manejo Ambiental por terminal, alineado a ISO 14001:2015."
+    },
+    {
+      "id": "ev-gei",
+      "indicador": "Inventario de emisiones GEI Alcance 1/2/3",
+      "dato": "No construido",
+      "factorId": "emisiones-gei",
+      "fuenteId": "entrevista",
+      "responsableId": "dir-mars",
+      "revisorId": "gerencia",
+      "estado": "Brecha — dato de origen existe",
+      "periodicidad": "Anual",
+      "notas": "Huella de carbono certificada en 2020, sin recertificación. Consumos de energía y combustible disponibles para Alcance 1 y 2."
+    },
+    {
+      "id": "ev-inundacion",
+      "indicador": "Riesgo físico: inundaciones",
+      "dato": "Identificado — nivel Alto",
+      "factorId": "inundaciones",
+      "fuenteId": "entrevista",
+      "responsableId": "dir-mars",
+      "revisorId": "gerencia",
+      "estado": "Cualitativo documentado",
+      "periodicidad": "Anual",
+      "notas": "Matriz institucional y entrevista. Sin cuantificación financiera ni seguro climático."
+    },
+    {
+      "id": "ev-politica",
+      "indicador": "Política ambiental publicada",
+      "dato": "Vigente en web institucional",
+      "factorId": "gobernanza-sost",
+      "fuenteId": "politica-ambiental",
+      "responsableId": "dir-mars",
+      "revisorId": "gerencia",
+      "estado": "Evidencia disponible",
+      "periodicidad": "Según actualización",
+      "notas": "Alineada a ISO 14001:2015. Base para justificar la adopción del marco de referencia internacional."
+    },
+    {
+      "id": "ev-rendicion",
+      "indicador": "Rendición de cuentas y diversidad",
+      "dato": "Acta 2025 firmada por Gerencia General",
+      "factorId": "diversidad",
+      "fuenteId": "rendicion-2025",
+      "responsableId": "gerencia",
+      "revisorId": "directorio",
+      "estado": "Evidencia disponible",
+      "periodicidad": "Anual",
+      "notas": "Incluye planta de personal, diversidad e inclusión, y respuestas a la ciudadanía."
+    },
+    {
+      "id": "ev-directorio",
+      "indicador": "Supervisión del Directorio sobre sostenibilidad",
+      "dato": "No documentada",
+      "factorId": "gobernanza-sost",
+      "fuenteId": "entrevista",
+      "responsableId": "directorio",
+      "revisorId": "gerencia",
+      "estado": "Brecha de gobernanza",
+      "periodicidad": "Anual",
+      "notas": "No hay mandatos ni términos de referencia. Principal barrera: consolidación de datos entre Direcciones."
+    },
+    {
+      "id": "ev-transicion",
+      "indicador": "Plan de transición climática",
+      "dato": "Iniciativas, no plan formal",
+      "factorId": "eficiencia",
+      "fuenteId": "entrevista",
+      "responsableId": "dir-mars",
+      "revisorId": "gerencia",
+      "estado": "Brecha — intención estratégica",
+      "periodicidad": "Anual",
+      "notas": "Faltan meta de emisiones, cronograma del estudio solar y fuente de financiamiento consolidada."
+    },
+    {
+      "id": "ev-simulacros",
+      "indicador": "Plan de emergencias y simulacros",
+      "dato": "Ejecutados en tres terminales",
+      "factorId": "inundaciones",
+      "fuenteId": "dmars-2025",
+      "responsableId": "dir-mars",
+      "revisorId": "gerencia",
+      "estado": "Evidencia disponible",
+      "periodicidad": "Según plan",
+      "notas": "Base operativa de resiliencia. No sustituye un análisis de escenarios climáticos."
+    },
+    {
+      "id": "ev-acciones",
+      "indicador": "Acciones ambientales y sociales 2025",
+      "dato": "Registro narrativo y fotográfico",
+      "factorId": "transparencia",
+      "fuenteId": "dmars-2025",
+      "responsableId": "dir-mars",
+      "revisorId": "gerencia",
+      "estado": "Evidencia disponible",
+      "periodicidad": "Anual",
+      "notas": "Serie “Terminal al día” y evidencias DMARS. No sigue aún el lenguaje NIIF S1/S2."
+    }
+  ]
+}

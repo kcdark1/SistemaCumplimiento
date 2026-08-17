@@ -1,0 +1,234 @@
+{
+  "titulo": "Matriz de riesgos y oportunidades climáticas",
+  "subtitulo": "Fundación Terminal Terrestre de Guayaquil (FTTG) — Pilar de Gestión de Riesgos, NIIF S2",
+  "leyenda": ["Bajo", "Medio", "Medio-Alto", "Alto"],
+  "heatmap": {
+    "impactos": ["Bajo", "Medio", "Alto"],
+    "probabilidades": ["Alta", "Media", "Baja"],
+    "celdas": [
+      ["Medio", "Medio-Alto", "Alto"],
+      ["Bajo", "Medio", "Medio-Alto"],
+      ["Bajo", "Bajo", "Medio"]
+    ]
+  },
+  "criterios": [
+    {
+      "criterio": "Probabilidad",
+      "nivel": "Bajo",
+      "descripcion": "Se estima que el evento ocurra rara vez o no existen antecedentes de este tipo en la FTTG."
+    },
+    {
+      "criterio": "Probabilidad",
+      "nivel": "Media",
+      "descripcion": "El evento ha ocurrido de forma esporádica o existe una posibilidad razonable de que ocurra."
+    },
+    {
+      "criterio": "Probabilidad",
+      "nivel": "Alta",
+      "descripcion": "El evento ocurre de forma recurrente o existe alta certeza de que ocurrirá."
+    },
+    {
+      "criterio": "Impacto",
+      "nivel": "Bajo",
+      "descripcion": "Afectación mínima: no interrumpe la operación ni genera costos relevantes."
+    },
+    {
+      "criterio": "Impacto",
+      "nivel": "Medio",
+      "descripcion": "Afectación moderada: genera costos adicionales o afecta parcialmente la operación o la imagen institucional."
+    },
+    {
+      "criterio": "Impacto",
+      "nivel": "Alto",
+      "descripcion": "Afectación severa: interrumpe la operación, genera pérdidas económicas significativas o daño reputacional grave."
+    },
+    {
+      "criterio": "Nivel de riesgo",
+      "nivel": "Bajo",
+      "descripcion": "Riesgo controlable, sujeto a monitoreo periódico."
+    },
+    {
+      "criterio": "Nivel de riesgo",
+      "nivel": "Medio",
+      "descripcion": "Riesgo que requiere un plan de acción a mediano plazo."
+    },
+    {
+      "criterio": "Nivel de riesgo",
+      "nivel": "Medio-Alto",
+      "descripcion": "Riesgo que requiere atención prioritaria en el corto o mediano plazo."
+    },
+    {
+      "criterio": "Nivel de riesgo",
+      "nivel": "Alto",
+      "descripcion": "Riesgo crítico: requiere un plan de mitigación inmediato."
+    }
+  ],
+  "riesgos": [
+    {
+      "id": "r-inundaciones",
+      "factorId": "inundaciones",
+      "categoria": "Físico",
+      "tipo": "Agudo",
+      "descripcion": "Inundaciones por lluvias intensas (El Niño): el patio de buses y los andenes de abordaje de la FTTG se inundan, deteniendo el ingreso y salida de unidades y afectando a usuarios en horas pico.",
+      "amenaza": "Eventos de lluvia extrema recurrentes en Guayaquil.",
+      "vulnerabilidad": "Drenaje insuficiente y andenes a nivel de calle, sin elevación.",
+      "plazo": "Corto plazo",
+      "probabilidad": "Alta",
+      "nivel": "Alto",
+      "impacto": "Alto",
+      "efecto": "Paraliza la operación diaria y genera pérdidas económicas directas por suspensión de rutas."
+    },
+    {
+      "id": "r-cortes",
+      "factorId": "cortes-energia",
+      "categoria": "Físico",
+      "tipo": "Agudo",
+      "descripcion": "Cortes de energía eléctrica por lluvias e inundaciones: la terminal pierde suministro eléctrico durante eventos de lluvia fuerte, afectando iluminación, seguridad y comunicación con usuarios.",
+      "amenaza": "Saturación de la red eléctrica local en temporada invernal.",
+      "vulnerabilidad": "La FTTG no cuenta con generación eléctrica de respaldo suficiente.",
+      "plazo": "Corto plazo",
+      "probabilidad": "Media-Alta",
+      "nivel": "Medio-Alto",
+      "impacto": "Medio-Alto",
+      "efecto": "Compromete la seguridad de los usuarios y la continuidad operativa en horas nocturnas."
+    },
+    {
+      "id": "r-vectores",
+      "factorId": "vectores",
+      "categoria": "Físico",
+      "tipo": "Agudo",
+      "descripcion": "Aumento rápido de enfermedades por aguas estancadas (dengue, chikungunya): tras las inundaciones, el agua acumulada favorece la aparición de vectores que ponen en riesgo la salud de usuarios y personal.",
+      "amenaza": "Temporada de lluvias prolongada, típica de la costa ecuatoriana.",
+      "vulnerabilidad": "Falta de protocolos de fumigación y eliminación rápida de agua estancada.",
+      "plazo": "Corto-Mediano plazo",
+      "probabilidad": "Media",
+      "nivel": "Medio",
+      "impacto": "Medio",
+      "efecto": "Implica un riesgo directo a la salud pública y una posible responsabilidad institucional."
+    },
+    {
+      "id": "r-temperatura",
+      "factorId": "temperatura",
+      "categoria": "Físico",
+      "tipo": "Crónico",
+      "descripcion": "Aumento de la temperatura promedio: el mayor calor dentro de la terminal afecta el confort de usuarios y personal, y eleva el gasto en climatización.",
+      "amenaza": "Tendencia de calentamiento en la región costera.",
+      "vulnerabilidad": "Infraestructura sin diseño bioclimático ni ventilación eficiente.",
+      "plazo": "Mediano plazo",
+      "probabilidad": "Alta",
+      "nivel": "Medio-Alto",
+      "impacto": "Medio-Alto",
+      "efecto": "No detiene la operación, pero incrementa los costos operativos de forma sostenida."
+    },
+    {
+      "id": "r-humedad",
+      "factorId": "humedad-suelo",
+      "categoria": "Físico",
+      "tipo": "Crónico",
+      "descripcion": "Humedad constante del suelo por lluvias prolongadas: el terreno bajo la terminal permanece húmedo por periodos largos, deteriorando poco a poco cimientos y tuberías de drenaje.",
+      "amenaza": "Temporadas de lluvia cada vez más largas en Guayaquil.",
+      "vulnerabilidad": "Antigüedad de la infraestructura y falta de mantenimiento preventivo.",
+      "plazo": "Largo plazo",
+      "probabilidad": "Media",
+      "nivel": "Medio",
+      "impacto": "Medio",
+      "efecto": "Compromete la vida útil de la infraestructura si no se interviene a tiempo."
+    },
+    {
+      "id": "r-corrosion",
+      "factorId": "corrosion",
+      "categoria": "Físico",
+      "tipo": "Crónico",
+      "descripcion": "Mayor desgaste de estructuras por corrosión y humedad ambiental: el clima tropical húmedo acelera el deterioro de metales, techos y sistemas eléctricos, elevando los costos de mantenimiento.",
+      "amenaza": "Humedad relativa alta y constante propia del clima de Guayaquil.",
+      "vulnerabilidad": "Materiales de construcción sin tratamiento anticorrosivo.",
+      "plazo": "Mediano-Largo plazo",
+      "probabilidad": "Alta",
+      "nivel": "Medio",
+      "impacto": "Medio",
+      "efecto": "Representa un gasto recurrente que crece si no se realiza mantenimiento preventivo."
+    },
+    {
+      "id": "r-normativa",
+      "factorId": "normativa-emisiones",
+      "categoria": "Transición",
+      "tipo": "Regulatorio",
+      "descripcion": "Nuevas normativas de emisiones para transporte terrestre: las cooperativas que operan en la FTTG podrían verse obligadas a renovar su flota o adoptar buses menos contaminantes.",
+      "amenaza": "Cambios en la normativa ambiental nacional o municipal.",
+      "vulnerabilidad": "La FTTG no tiene infraestructura de carga eléctrica ni protocolos de transición para operadores.",
+      "plazo": "Mediano plazo",
+      "probabilidad": "Alta",
+      "nivel": "Alto",
+      "impacto": "Alto",
+      "efecto": "Inversión en infraestructura y podría afectar la relación con las cooperativas de transporte."
+    },
+    {
+      "id": "r-electromovilidad",
+      "factorId": "electromovilidad",
+      "categoria": "Transición",
+      "tipo": "Tecnológico",
+      "descripcion": "Adopción de buses eléctricos o híbridos: se requerirán puntos de carga y adecuación de andenes para las nuevas unidades.",
+      "amenaza": "Presión del mercado y de la regulación hacia la electromovilidad.",
+      "vulnerabilidad": "Falta de estudios técnicos previos sobre la capacidad eléctrica de la terminal.",
+      "plazo": "Mediano-Largo plazo",
+      "probabilidad": "Media",
+      "nivel": "Medio",
+      "impacto": "Medio",
+      "efecto": "Inversión planificada si se anticipa con tiempo."
+    },
+    {
+      "id": "r-competitividad",
+      "factorId": "competitividad",
+      "categoria": "Transición",
+      "tipo": "Mercado",
+      "descripcion": "Pérdida de competitividad frente a otras terminales o medios de transporte con certificaciones sostenibles: si la FTTG no adopta prácticas visibles, puede perder relevancia frente a alternativas mejor posicionadas.",
+      "amenaza": "Creciente exigencia del mercado por operadores certificados en sostenibilidad.",
+      "vulnerabilidad": "La FTTG aún no cuenta con certificaciones ni sello de sostenibilidad.",
+      "plazo": "Largo plazo",
+      "probabilidad": "Baja-Media",
+      "nivel": "Medio",
+      "impacto": "Medio",
+      "efecto": "Afecta la posición institucional a largo plazo frente a otros actores del sector."
+    },
+    {
+      "id": "r-reputacional",
+      "factorId": "transparencia",
+      "categoria": "Transición",
+      "tipo": "Reputacional",
+      "descripcion": "Mayor exigencia de transparencia en sostenibilidad: usuarios, cooperativas y entes de control esperan reportes claros de gestión ambiental de parte de la FTTG.",
+      "amenaza": "Mayor exigencia social y regulatoria de rendición de cuentas.",
+      "vulnerabilidad": "La FTTG no contaba previamente con un modelo formal de reporte de sostenibilidad.",
+      "plazo": "Corto plazo",
+      "probabilidad": "Alta",
+      "nivel": "Medio-Alto",
+      "impacto": "Medio-Alto",
+      "efecto": "Afecta la imagen institucional ante actores clave, aunque no la operación directa."
+    }
+  ],
+  "oportunidades": [
+    {
+      "id": "o-eficiencia",
+      "factorId": "eficiencia",
+      "categoria": "Oportunidad",
+      "tipo": "Eficiencia de recursos",
+      "descripcion": "Optimización energética: la iluminación LED, los paneles solares y una mejor gestión del agua permiten reducir costos operativos.",
+      "plazo": "Corto-Mediano plazo",
+      "probabilidad": "Alta",
+      "nivel": "Oportunidad Alta",
+      "impacto": "Alto",
+      "efecto": "Genera un ahorro sostenido en el tiempo."
+    },
+    {
+      "id": "o-financiamiento",
+      "factorId": "financiamiento-verde",
+      "categoria": "Oportunidad",
+      "tipo": "Financiamiento",
+      "descripcion": "Acceso a incentivos y financiamiento verde: adoptar un modelo de reporte de sostenibilidad puede abrir la puerta a créditos o cooperación con condiciones preferenciales para infraestructura sostenible.",
+      "plazo": "Mediano plazo",
+      "probabilidad": "Media",
+      "nivel": "Oportunidad Media-Alta",
+      "impacto": "Medio-Alto",
+      "efecto": "Representa una vía concreta de recursos para mejoras que de otra forma se financiarían con presupuesto propio."
+    }
+  ]
+}

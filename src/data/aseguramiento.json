@@ -1,0 +1,48 @@
+{
+  "titulo": "Declaración de confiabilidad",
+  "tipo": "Aseguramiento limitado sobre información de sostenibilidad",
+  "marco": "Referencia a NIIF S1 y NIIF S2 (ISSB) · Sistema de aseguramiento FTTG",
+  "destinatario": "Gerencia General y Dirección de Medio Ambiente y Responsabilidad Social de la Fundación Terminal Terrestre de Guayaquil",
+  "periodo": "Información de sostenibilidad correspondiente al periodo 2025–2026, con indicadores de seguimiento a mayo 2026.",
+  "alcance": "La declaración cubre el ciclo de seis pasos del Sistema de Aseguramiento: diagnóstico de fuentes, priorización de factores ASG, matriz de riesgos climáticos, diseño del reporte bajo los cuatro pilares NIIF S1/S2, trazabilidad de evidencia y responsables, y esta declaración de confiabilidad.",
+  "criterios": [
+    "NIIF S1 — Requerimientos generales de información financiera a revelar relacionada con la sostenibilidad.",
+    "NIIF S2 — Información a revelar relacionada con el clima.",
+    "Guía de estructura del informe para una terminal terrestre (cuatro pilares: gobernanza, estrategia, gestión de riesgos, métricas y metas).",
+    "Fuentes primarias internas de la FTTG: Acciones DMARS 2025, Acta de Rendición de Cuentas 2025, Informe de Seguimiento de Indicadores (mayo 2026), Política Ambiental y entrevista técnica a DMARS."
+  ],
+  "trabajoRealizado": [
+    "Se cargaron y contrastaron cinco fuentes documentales primarias contra los requerimientos de NIIF S1 y NIIF S2.",
+    "Se calificó el estado de cada pilar (cumple / parcial / ausente) con semáforo y evidencia de respaldo.",
+    "Se priorizaron los factores ASG relevantes a partir del diagnóstico, distinguiendo riesgos físicos, de transición, métricas y oportunidades.",
+    "Se construyó la matriz de riesgos y oportunidades con semáforo de probabilidad e impacto, mapa de calor y guía de criterios.",
+    "Se diseñó el informe siguiendo la estructura de los cuatro pilares y las secciones de alcance, juicios, presentación y transición.",
+    "Se asignó a cada indicador material una fuente, un responsable de elaboración y un revisor, dejando visible el estado de la evidencia."
+  ],
+  "limitaciones": [
+    "Ecuador no tiene mandato formal de adopción de NIIF S1/S2; el marco se usa como referencia de mejores prácticas, no como obligación legal.",
+    "No se declara conformidad plena con las Normas NIIF de Sostenibilidad: existen brechas materiales (inventario GEI, plan de transición, supervisión del Directorio).",
+    "No se realizó un inventario de emisiones bajo GHG Protocol ni una cuantificación financiera de riesgos climáticos; se acoge la exención de cuantificación y los alivios de primer año.",
+    "El aseguramiento es de naturaleza limitada y se basa en información interna suministrada por la entidad, sin procedimientos de confirmación externa independiente tipo ISAE 3000 (revisado).",
+    "Las mediciones puntuales de gases del PMA no se integraron a un inventario de Alcance 1, 2 y 3."
+  ],
+  "conclusion": "Sobre la base del trabajo descrito, nada llamó nuestra atención que nos lleve a creer que la información de sostenibilidad compilada en este ciclo no esté, en todos los aspectos materiales, respaldada por las fuentes internas identificadas y estructurada de forma coherente con los cuatro pilares de NIIF S1/S2 tomados como referencia. La declaración afirma trazabilidad y confiabilidad del proceso, no la ausencia de brechas: las brechas quedan explícitas (GEI, transición climática, gobierno corporativo) precisamente para que la Gerencia pueda cerrarlas de forma ordenada.",
+  "cierre": "El riesgo más costoso no es el que ocurre, sino el que nadie vio venir. Este sistema existe para que la FTTG anticipe riesgos ambientales, sociales y climáticos antes de que ocurran, con evidencia, responsables y un lenguaje que ya es parte del lenguaje financiero.",
+  "firmas": [
+    {
+      "rol": "Elaborado por",
+      "nombre": "Equipo de Auditoría y Control de Gestión",
+      "entidad": "Sistema de Aseguramiento FTTG"
+    },
+    {
+      "rol": "Área técnica responsable",
+      "nombre": "Dirección de Medio Ambiente y Responsabilidad Social",
+      "entidad": "FTTG"
+    },
+    {
+      "rol": "Aprobación institucional",
+      "nombre": "Gerencia General",
+      "entidad": "FTTG"
+    }
+  ]
+}

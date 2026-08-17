@@ -1,0 +1,290 @@
+{
+  "entidad": {
+    "nombre": "Fundación Terminal Terrestre de Guayaquil",
+    "sigla": "FTTG",
+    "sector": "Administración de infraestructura de transporte terrestre",
+    "periodo": "2025–2026",
+    "marcos": ["NIIF S1", "NIIF S2", "ISO 14001:2015"],
+    "terminales": ["TTG", "TTMP", "TTMC"]
+  },
+  "introduccion": "Este diagnóstico examina el estado actual de la gestión de sostenibilidad de la Fundación Terminal Terrestre de Guayaquil (FTTG) y lo contrasta con los requerimientos de las Normas NIIF de Sostenibilidad NIIF S1 (información general de sostenibilidad) y NIIF S2 (información relacionada con el clima), emitidas por el ISSB. El objetivo es identificar qué elementos ya existen, cuáles existen de forma parcial y cuáles están ausentes, como insumo para el diseño del modelo de reporte y del sistema de aseguramiento.",
+  "sintesis": "La FTTG cuenta con una base operativa de gestión ambiental relativamente madura (indicadores, políticas, plan de manejo ambiental, simulacros), pero esta información fue construida para fines de cumplimiento ambiental local (ISO 14001, Ministerio del Ambiente) y de rendición de cuentas municipal — no para un informe de sostenibilidad bajo el lenguaje y la estructura que exige NIIF S1/S2. La brecha principal no es de datos inexistentes, sino de traducción, conexión financiera y ausencia de un enfoque climático estructurado (emisiones, escenarios, plan de transición).",
+  "fuentes": [
+    {
+      "id": "dmars-2025",
+      "documento": "Acciones Realizadas 2025 — DMARS",
+      "naturaleza": "Evidencia narrativa y fotográfica de actividades ambientales y sociales ejecutadas en el año.",
+      "tipo": "Interno"
+    },
+    {
+      "id": "rendicion-2025",
+      "documento": "Acta de Contestación de Preguntas de la Ciudadanía — Rendición de Cuentas 2025",
+      "naturaleza": "Respuestas oficiales a inquietudes ciudadanas; datos de planta de personal, diversidad e inclusión.",
+      "tipo": "Público"
+    },
+    {
+      "id": "indicadores-2026",
+      "documento": "Informe de Seguimiento de Indicadores (mayo 2026)",
+      "naturaleza": "Indicadores mensuales del Sistema de Gestión Ambiental: PTAR, residuos, PMA, agua y energía.",
+      "tipo": "Interno"
+    },
+    {
+      "id": "politica-ambiental",
+      "documento": "Política de Medio Ambiente de la FTTG",
+      "naturaleza": "Declaración institucional de compromisos ambientales alineada a ISO 14001:2015.",
+      "tipo": "Institucional"
+    },
+    {
+      "id": "entrevista",
+      "documento": "Transcripción de entrevista técnica",
+      "naturaleza": "Entrevista a la Dirección de Medio Ambiente y Responsabilidad Social sobre gobernanza, riesgos, métricas y conocimiento normativo.",
+      "tipo": "Primaria"
+    }
+  ],
+  "pilares": [
+    {
+      "id": "alcance",
+      "orden": 0,
+      "nombre": "Alcance y declaración",
+      "estado": "ausente",
+      "observacion": "No existe conocimiento ni discusión previa de NIIF S1/S2 dentro de la institución; no hay declaración de referencia normativa alguna."
+    },
+    {
+      "id": "gobernanza",
+      "orden": 1,
+      "nombre": "Gobernanza",
+      "estado": "parcial",
+      "observacion": "Existe un área técnica responsable (Dirección de Medio Ambiente y RS) con cadena de aprobación documentada, pero sin evidencia de supervisión formal por parte del Directorio ni de competencias específicas en sostenibilidad/clima."
+    },
+    {
+      "id": "estrategia",
+      "orden": 2,
+      "nombre": "Estrategia",
+      "estado": "parcial",
+      "observacion": "Hay riesgos físicos identificados y una intención estratégica (paneles solares, Plan 2026-2030), pero no hay plan de transición formal, ni análisis de escenarios, ni evaluación de efectos financieros."
+    },
+    {
+      "id": "riesgo",
+      "orden": 3,
+      "nombre": "Gestión del riesgo",
+      "estado": "parcial",
+      "observacion": "Existe una matriz de riesgos con componente ambiental y un plan de emergencias, pero no un ciclo documentado de identificación-evaluación-priorización-supervisión, ni integración explícita al riesgo institucional general."
+    },
+    {
+      "id": "metricas",
+      "orden": 4,
+      "nombre": "Métricas y objetivos",
+      "estado": "parcial",
+      "observacion": "Hay métricas operativas sólidas (PTAR, residuos, agua, energía) con seguimiento mensual, pero no hay inventario de emisiones GEI bajo GHG Protocol, ni metas numéricas de reducción con plazos definidos."
+    },
+    {
+      "id": "presentacion",
+      "orden": 5,
+      "nombre": "Requerimientos de presentación",
+      "estado": "ausente",
+      "observacion": "No se usa ningún marco de reporte de sostenibilidad (ni GRI, ni ODS, ni NIIF); la información ambiental y financiera no están conectadas explícitamente."
+    },
+    {
+      "id": "transicion",
+      "orden": 6,
+      "nombre": "Disposiciones de transición",
+      "estado": "cumple",
+      "observacion": "Totalmente disponibles: al no haberse iniciado ningún ejercicio bajo NIIF S1/S2, la FTTG podría acogerse a todos los alivios de primer año si decide adoptar el marco."
+    }
+  ],
+  "secciones": [
+    {
+      "id": "alcance",
+      "titulo": "Alcance y carácter de aplicación",
+      "narrativa": "La entrevista a la Dirección de Medio Ambiente confirma de manera explícita que, a la fecha, no se conocen las Normas NIIF S1 y NIIF S2 dentro de la institución, ni se ha discutido su eventual aplicación. Tampoco se utiliza ningún marco de reporte de sostenibilidad reconocido (GRI, ODS); la gestión se guía por indicadores internos de desempeño alineados al Sistema de Gestión Ambiental (SGA) y a la norma ISO 14001:2015.",
+      "tiene": [
+        "Voluntad institucional de mejora continua declarada en la Política Ambiental.",
+        "Cadena de aprobación documental clara (elaborado / revisado / aprobado) en los informes existentes."
+      ],
+      "falta": [
+        "Ningún conocimiento previo de NIIF S1/S2 ni de su lógica de aplicación voluntaria.",
+        "Ninguna declaración de referencia normativa en ningún documento existente.",
+        "Ningún marco de sostenibilidad reconocido (GRI, ODS, SASB) en uso actual."
+      ]
+    },
+    {
+      "id": "gobernanza",
+      "titulo": "Gobernanza",
+      "narrativa": "La FTTG cuenta con una Dirección de Medio Ambiente y Responsabilidad Social, liderada por su Directora, de quien depende un Analista de Medio Ambiente encargado de consolidar los indicadores y elaborar los informes mensuales de seguimiento. Estos informes siguen una cadena formal de elaboración, revisión y aprobación. La Gerencia General participa directamente en la rendición de cuentas ante la ciudadanía, firmando el acta correspondiente.",
+      "hallazgo": "Se identificó como principal barrera interna la falta de comunicación entre Direcciones para consolidar información. Esto no es una carencia de recursos, sino de gobernanza transversal: no existe un comité de sostenibilidad interdireccional que centralice la información antes de que llegue al área ambiental.",
+      "tiene": [
+        "Área técnica designada (Dirección de Medio Ambiente y RS) con responsable nombrado.",
+        "Cadena de aprobación documental visible en los informes.",
+        "Reporte anual formal a autoridades externas (MAE, municipio, prefectura).",
+        "Participación de la Gerencia General en la rendición de cuentas pública."
+      ],
+      "falta": [
+        "Sin evidencia de supervisión del Directorio sobre riesgos y oportunidades de sostenibilidad.",
+        "Sin mandatos ni términos de referencia documentados a nivel de gobierno corporativo.",
+        "Falta de comunicación y consolidación de datos entre Direcciones."
+      ]
+    },
+    {
+      "id": "estrategia",
+      "titulo": "Estrategia",
+      "narrativa": "La FTTG cuenta con una matriz de riesgos institucional que incorpora un componente ambiental, en la cual se han identificado riesgos físicos climáticos relevantes (inundaciones, temperaturas extremas). No se ha realizado el ejercicio de riesgos de transición. Existe comprensión operativa de la cadena de valor (cooperativas, concesionarios, carretilleros), pero no un análisis documentado de cómo los riesgos de sostenibilidad afectan a cada eslabón. El Plan Estratégico 2026-2030 incluye un Eje 4 de Sostenibilidad Ambiental y Social, y se gestiona un estudio de factibilidad para paneles solares. No se ha cuantificado el ahorro por eficiencia energética ni el impacto financiero de riesgos climáticos, ni existen pólizas para eventos extremos. Hay plan de emergencias y simulacros, pero no análisis de escenarios ni indicadores de alerta temprana.",
+      "tiene": [
+        "Matriz de riesgos institucional con componente ambiental.",
+        "Riesgos físicos climáticos identificados (inundación, temperatura).",
+        "Plan de emergencias ambientales con simulacros periódicos.",
+        "Estudio en curso para paneles solares y Eje 4 en el Plan Estratégico 2026-2030.",
+        "Rubro presupuestario para inversión en sostenibilidad."
+      ],
+      "falta": [
+        "Riesgos de transición no identificados.",
+        "Sin plan de transición climática formal (metas + hitos + financiamiento).",
+        "Sin cuantificación de ahorro por eficiencia energética.",
+        "Sin evaluación de impacto financiero de riesgos climáticos.",
+        "Sin seguros para eventos climáticos extremos.",
+        "Sin análisis de escenarios climáticos ni indicadores de alerta temprana."
+      ]
+    },
+    {
+      "id": "riesgo",
+      "titulo": "Gestión del riesgo",
+      "narrativa": "La FTTG dispone de varios componentes de gestión de riesgo ambiental ya operativos: una matriz de riesgos con enfoque ambiental, un plan de emergencias, simulacros regulares y el monitoreo mensual de la PTAR, que registró 100% de cumplimiento de parámetros en los cuatro periodos evaluados dentro del informe de mayo 2026. El indicador de incidentes por derrames se encuentra en seguimiento semestral, sin eventos registrados. Lo que no se evidencia es un ciclo documentado de identificación, evaluación, priorización y supervisión de riesgos de sostenibilidad integrado a la gestión de riesgos institucional general.",
+      "tiene": [
+        "Matriz de riesgos con componente ambiental ya desarrollada.",
+        "Plan de emergencias ambientales vigente, con simulacros ejecutados.",
+        "Monitoreo mensual de PTAR con 100% de cumplimiento en el periodo evaluado.",
+        "Indicador semestral de incidentes por derrames, sin eventos registrados."
+      ],
+      "falta": [
+        "Sin ciclo documentado de 4 pasos (identificar-evaluar-priorizar-supervisar) específico para sostenibilidad/clima.",
+        "Sin evidencia de integración explícita entre la gestión de riesgos ambientales y la gestión de riesgos institucional general."
+      ]
+    },
+    {
+      "id": "metricas",
+      "titulo": "Métricas y objetivos",
+      "narrativa": "Este es el pilar con mayor desarrollo operativo, aunque con una brecha crítica en el componente climático. La institución mantiene un sistema de indicadores mensuales estructurado dentro de su SGA. La FTTG no cuenta con certificación vigente de huella de carbono (certificada en 2020, sin recertificación). Existen mediciones puntuales de gases a través de consultorías del PMA, no integradas en un inventario de Alcance 1, 2 y 3 bajo GHG Protocol.",
+      "hallazgo": "La FTTG mide consumo de agua y energía con mucho detalle, pero no traduce ese consumo en emisiones de gases de efecto invernadero. Las facturas de electricidad y los registros de combustible ya existen: solo requiere aplicarse un factor de emisión reconocido para construir el inventario de Alcance 1 y 2 que exige NIIF S2 párr. 29(a).",
+      "tiene": [
+        "Sistema de indicadores mensuales estructurado y documentado (SGA).",
+        "Datos de consumo de agua y energía por terminal, con variación mensual.",
+        "Datos de gestión de residuos reciclables (mensual y acumulado).",
+        "Monitoreo de cumplimiento legal (PMA) por terminal.",
+        "Datos demográficos de la planta de personal reportados en rendición de cuentas."
+      ],
+      "falta": [
+        "Sin inventario de emisiones GEI (Alcance 1, 2 y 3) bajo GHG Protocol.",
+        "Sin certificación vigente de huella de carbono (vencida desde 2020).",
+        "Sin métricas sectoriales SASB adaptadas explícitamente.",
+        "Sin metas numéricas de reducción de emisiones o consumo con plazos definidos.",
+        "Sin cuantificación del ahorro por eficiencia energética."
+      ]
+    },
+    {
+      "id": "presentacion",
+      "titulo": "Requerimientos generales de presentación",
+      "narrativa": "La FTTG publica su Política Ambiental en su página web institucional y difunde actividades ambientales y sociales a través de redes sociales, particularmente Instagram, con la serie “Terminal al día”. Reporta anualmente a las autoridades competentes (Ministerio del Ambiente, municipio, prefectura) y elabora informes internos mensuales y una rendición de cuentas anual pública. Ninguno de estos reportes sigue la estructura, el lenguaje o los requerimientos de comparabilidad, conexión con la información financiera o declaración de conformidad que exige NIIF S1.",
+      "tiene": [
+        "Política ambiental publicada en la web institucional.",
+        "Difusión activa de actividades ambientales y sociales en redes sociales.",
+        "Reporte anual formal a autoridades ambientales y de control.",
+        "Informes internos mensuales y rendición de cuentas anual pública ya institucionalizados."
+      ],
+      "falta": [
+        "Sin uso de ningún marco de sostenibilidad reconocido (GRI, ODS, NIIF S1/S2, SASB).",
+        "Sin declaración de conformidad o de referencia normativa.",
+        "Sin conexión explícita entre la información ambiental/social y los estados financieros.",
+        "Comparabilidad limitada: no existe una serie histórica estandarizada y publicada."
+      ]
+    },
+    {
+      "id": "transicion",
+      "titulo": "Disposiciones de transición",
+      "narrativa": "Dado que la FTTG no ha iniciado ningún ejercicio de reporte bajo NIIF S1 y S2, todas las disposiciones de transición para el primer año de aplicación estarían disponibles: el enfoque climate-first, el alivio de información comparativa, el alivio de Alcance 3 y el alivio metodológico de GEI. Esta es, en la práctica, la única área donde la FTTG parte en una posición completamente favorable.",
+      "tiene": [
+        "Enfoque climate-first disponible (reportar primero solo NIIF S2).",
+        "Alivio de información comparativa en el primer año.",
+        "Alivio de Alcance 3 diferible al segundo año.",
+        "Alivio metodológico de GEI en el primer año de aplicación."
+      ],
+      "falta": []
+    }
+  ],
+  "indicadores": [
+    {
+      "id": "ptar",
+      "nombre": "Cumplimiento parámetros PTAR",
+      "dato": "100% (4 periodos evaluados)",
+      "frecuencia": "Mensual",
+      "fuenteId": "indicadores-2026"
+    },
+    {
+      "id": "reciclaje-mes",
+      "nombre": "Materiales reciclables recuperados",
+      "dato": "1.177 kg (969 cartón, 194 PET, 14 archivo)",
+      "frecuencia": "Mensual",
+      "fuenteId": "indicadores-2026"
+    },
+    {
+      "id": "reciclaje-acum",
+      "nombre": "Acumulado reciclaje ene–may 2026",
+      "dato": "6.145 kg (4.866 cartón, 1.222 PET, 57 archivo)",
+      "frecuencia": "Acumulado",
+      "fuenteId": "indicadores-2026"
+    },
+    {
+      "id": "peligrosos",
+      "nombre": "Desechos peligrosos generados",
+      "dato": "Generación registrada, sin cuantificar en el informe mensual",
+      "frecuencia": "Anual",
+      "fuenteId": "indicadores-2026"
+    },
+    {
+      "id": "derrames",
+      "nombre": "Incidentes por derrames",
+      "dato": "0 registrados en el periodo",
+      "frecuencia": "Semestral",
+      "fuenteId": "indicadores-2026"
+    },
+    {
+      "id": "pma",
+      "nombre": "Cumplimiento PMA (TTG / TTMP / TTMC)",
+      "dato": "Evaluado en los tres terminales",
+      "frecuencia": "Mensual",
+      "fuenteId": "indicadores-2026"
+    },
+    {
+      "id": "agua",
+      "nombre": "Consumo de agua — TTG / TTMP / TTMC",
+      "dato": "9.373 / 1.069 / 902 m³ por mes (promedio ene–abr 2026)",
+      "frecuencia": "Mensual",
+      "fuenteId": "indicadores-2026"
+    },
+    {
+      "id": "energia",
+      "nombre": "Consumo de energía — TTG / TTMP / TTMC",
+      "dato": "394.830 / 92.730 / 51.910 kWh por mes (promedio ene–abr 2026)",
+      "frecuencia": "Mensual",
+      "fuenteId": "indicadores-2026"
+    },
+    {
+      "id": "mes-critico",
+      "nombre": "Mes crítico de consumo (las 3 terminales)",
+      "dato": "Enero (mayor demanda de agua y energía)",
+      "frecuencia": "Anual",
+      "fuenteId": "indicadores-2026"
+    }
+  ],
+  "conclusiones": [
+    "La FTTG tiene una base de gestión ambiental operativa consolidada (PMA, SGA, política ambiental, indicadores mensuales, simulacros), construida principalmente para el cumplimiento de ISO 14001:2015 y de la normativa ambiental ecuatoriana, no para un informe de sostenibilidad bajo NIIF S1/S2.",
+    "El pilar más débil es la ausencia de un inventario de emisiones GEI: existen los datos de origen (consumo de agua, energía y combustible) pero no se han traducido a un formato de Alcance 1/2/3, y la certificación de huella de carbono de 2020 no se ha renovado.",
+    "La gobernanza de sostenibilidad está concentrada en un área técnica sin evidencia de involucramiento formal y documentado del Directorio o la Gerencia General en la supervisión estratégica de estos temas.",
+    "No existe ningún plan de transición climática formal, análisis de escenarios ni evaluación del impacto financiero de los riesgos climáticos, aunque cuenta con información cualitativa de base (riesgos físicos ya identificados, plan de emergencias vigente).",
+    "Al no haber iniciado ningún ejercicio bajo NIIF S1/S2, tiene acceso completo a todas las disposiciones de transición de primer año, lo que reduce el esfuerzo inicial requerido."
+  ],
+  "recomendaciones": [
+    "Construir el inventario básico de emisiones GEI a partir de los datos de consumo ya existentes.",
+    "Formalizar un plan de transición con metas, hitos y presupuesto.",
+    "Elevar la supervisión de sostenibilidad a nivel de Directorio o Gerencia General.",
+    "Adoptar explícitamente el lenguaje de referencia a NIIF S1/S2 en los reportes ya existentes."
+  ]
+}
