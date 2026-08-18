@@ -1,5 +1,6 @@
 import { Download, BadgeCheck } from "lucide-react";
 import StepShell from "../components/StepShell";
+import Kpi from "../components/Kpi";
 import { useWorkflow } from "../context/WorkflowContext";
 
 export default function Aseguramiento() {
@@ -26,56 +27,75 @@ export default function Aseguramiento() {
 
   return (
     <StepShell
-      kicker="Paso 06"
+      kicker="Paso 06 · Dashboard"
       title="Aseguramiento"
-      lead="Cierre del ciclo: una declaración de confiabilidad sobre el proceso, las fuentes y las limitaciones — no una conformidad plena con NIIF S1/S2."
+      lead="Declaración de confiabilidad del ciclo. Referencia a NIIF S1/S2, no conformidad plena."
       actions={
         <button className="btn btn-gold" type="button" onClick={exportar}>
           <Download size={16} />
-          Emitir declaración PDF
+          Emitir PDF
         </button>
       }
     >
       <div className="seal">
-        <BadgeCheck size={48} strokeWidth={1.5} />
+        <BadgeCheck size={40} strokeWidth={1.5} />
       </div>
-      <p className="quote">{aseguramiento.cierre}</p>
 
-      <article className="card">
-        <p className="kicker">{aseguramiento.tipo}</p>
-        <h3>{aseguramiento.titulo}</h3>
-        <p>{aseguramiento.marco}</p>
-        <p><strong>Destinatario. </strong>{aseguramiento.destinatario}</p>
-        <p><strong>Periodo. </strong>{aseguramiento.periodo}</p>
-        <p><strong>Alcance. </strong>{aseguramiento.alcance}</p>
-      </article>
+      <div className="dash">
+        <Kpi value={`${completed.size}/6`} label="pasos del ciclo" />
+        <Kpi value={selectedFactores.length} label="factores ASG" tone="ok" />
+        <Kpi value={evidenciasFiltradas.length} label="evidencias" />
+        <Kpi value={aseguramiento.limitaciones.length} label="limitaciones" tone="warn" />
+      </div>
 
-      <div className="grid grid-2" style={{ marginTop: 14 }}>
+      <div className="grid grid-3" style={{ marginBottom: 14 }}>
+        <article className="card dash-card">
+          <span className="tag">Tipo</span>
+          <h3>Aseguramiento limitado</h3>
+          <p className="clamp" style={{ margin: 0 }}>{aseguramiento.marco}</p>
+        </article>
+        <article className="card dash-card">
+          <span className="tag">Periodo</span>
+          <h3>2025–2026</h3>
+          <p className="clamp" style={{ margin: 0 }}>{aseguramiento.periodo}</p>
+        </article>
+        <article className="card dash-card">
+          <span className="tag">Destinatario</span>
+          <h3>Gerencia y DMARS</h3>
+          <p className="clamp" style={{ margin: 0 }}>{aseguramiento.destinatario}</p>
+        </article>
+      </div>
+
+      <div className="grid grid-2">
         <article className="card">
-          <h3>Criterios aplicados</h3>
-          <ul className="list">
-            {aseguramiento.criterios.map((c) => <li key={c}>{c}</li>)}
-          </ul>
+          <h3>Criterios</h3>
+          {aseguramiento.criterios.map((c) => (
+            <div className="check-item" key={c}>
+              <span className="check-dot" />
+              <span>{c}</span>
+            </div>
+          ))}
         </article>
         <article className="card">
           <h3>Trabajo realizado</h3>
-          <ul className="list">
-            {aseguramiento.trabajoRealizado.map((c) => <li key={c}>{c}</li>)}
-          </ul>
+          {aseguramiento.trabajoRealizado.map((c) => (
+            <div className="check-item" key={c}>
+              <span className="check-dot" />
+              <span>{c}</span>
+            </div>
+          ))}
         </article>
       </div>
 
-      <article className="card" style={{ marginTop: 14 }}>
-        <h3>Limitaciones</h3>
-        <ul className="list">
-          {aseguramiento.limitaciones.map((c) => <li key={c}>{c}</li>)}
-        </ul>
-      </article>
-
-      <article className="card" style={{ marginTop: 14, background: "#fbf8e8" }}>
-        <h3>Conclusión</h3>
-        <p>{aseguramiento.conclusion}</p>
-      </article>
+      <details className="accordion" style={{ marginTop: 14 }}>
+        <summary>Limitaciones y conclusión</summary>
+        <div className="acc-body">
+          <ul className="list">
+            {aseguramiento.limitaciones.map((c) => <li key={c}>{c}</li>)}
+          </ul>
+          <p>{aseguramiento.conclusion}</p>
+        </div>
+      </details>
 
       <div className="grid grid-3" style={{ marginTop: 14 }}>
         {aseguramiento.firmas.map((f) => (

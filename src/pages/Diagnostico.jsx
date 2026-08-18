@@ -1,115 +1,216 @@
-import { FolderOpen } from "lucide-react";
+import { useRef, useState } from "react";
+import { FileUp, FolderOpen, Trash2, AlertCircle } from "lucide-react";
 import StepShell from "../components/StepShell";
+import Kpi from "../components/Kpi";
 import { useWorkflow } from "../context/WorkflowContext";
-import { estadoClass, estadoLabel } from "../utils/helpers";
+import { estadoClass, estadoLabel, clasificarEstado, formatoPeso } from "../utils/helpers";
+
+function TablaWord({ rows }) {
+  if (!rows?.length) return null;
+  const [header, ...body] = rows;
+  const estadoIdx = header.findIndex((h) => /estado/i.test(h));
+  return (
+    <div className="table-wrap" style={{ margin: "12px 0" }}>
+      <table className="data">
+        <thead>
+          <tr>
+            {header.map((h, i) => <th key={`${h}-${i}`}>{h || `Columna ${i + 1}`}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {body.map((row, ri) => (
+            <tr key={ri}>
+              {header.map((_, ci) => {
+                const cell = row[ci] || "";
+                if (ci === estadoIdx) {
+                  const estado = clasificarEstado(cell);
+                  if (estado) {
+                    return (
+                      <td key={ci}>
+                        <span className={`semaforo ${estadoClass(estado)}`}>
+                          <span className="dot" />
+                          {cell || estadoLabel(estado)}
+                        </span>
+                      </td>
+                    );
+                  }
+                }
+                return <td key={ci}>{cell}</td>;
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
 
 export default function Diagnostico() {
-  const { diagnostico, fuentesCargadas, setFuentesCargadas, mark } = useWorkflow();
+  const { diagnostico, wordFuentes, addWordFuentes, removeWordFuente, mark } = useWorkflow();
+  const inputRef = useRef(null);
+  const [dragging, setDragging] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [abierto, setAbierto] = useState(null);
 
-  const cargar = () => {
-    setFuentesCargadas(true);
-    mark(1);
+  const procesar = async (fileList) => {
+    const files = [...fileList];
+    if (!files.length) return;
+    setError("");
+    setLoading(true);
+    try {
+      const { parsearWord } = await import("../utils/word");
+      const parsed = [];
+      const errores = [];
+      for (const file of files) {
+        try {
+          parsed.push(await parsearWord(file));
+        } catch (err) {
+          errores.push(err.message);
+        }
+      }
+      if (parsed.length) {
+        addWordFuentes(parsed);
+        mark(1);
+      }
+      if (errores.length) setError(errores.join(" "));
+    } finally {
+      setLoading(false);
+      if (inputRef.current) inputRef.current.value = "";
+    }
   };
+
+  const conteo = diagnostico.pilares.reduce(
+    (acc, p) => {
+      acc[p.estado] += 1;
+      return acc;
+    },
+    { cumple: 0, parcial: 0, ausente: 0 }
+  );
 
   return (
     <StepShell
-      kicker="Paso 01"
+      kicker="Paso 01 · Dashboard"
       title="Diagnóstico"
-      lead="Las fuentes de información internas de la FTTG se contrastan con NIIF S1 y NIIF S2. Este es el insumo que alimenta todo el ciclo."
+      lead="Cargue fuentes Word (.docx). El dashboard resume el contraste con NIIF S1/S2."
       actions={
-        <button className="btn btn-primary" type="button" onClick={cargar}>
+        <button className="btn btn-primary" type="button" onClick={() => inputRef.current?.click()} disabled={loading}>
           <FolderOpen size={16} />
-          {fuentesCargadas ? "Fuentes cargadas" : "Cargar fuentes JSON"}
+          {loading ? "Leyendo Word…" : "Cargar Word"}
         </button>
       }
     >
-      {!fuentesCargadas ? (
-        <p className="muted">
-          Pulse <strong>Cargar fuentes JSON</strong> para incorporar el diagnóstico embebido
-          (Acciones DMARS 2025, rendición de cuentas, indicadores de mayo 2026, política ambiental y entrevista técnica).
-        </p>
-      ) : (
-        <>
-          <p className="muted" style={{ marginTop: 0 }}>
-            {diagnostico.introduccion}
-          </p>
+      <input
+        ref={inputRef}
+        type="file"
+        accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        multiple
+        hidden
+        onChange={(e) => procesar(e.target.files)}
+      />
 
-          <div className="grid grid-2" style={{ margin: "18px 0" }}>
-            {diagnostico.fuentes.map((f) => (
+      <div
+        className={`dropzone ${dragging ? "dragging" : ""}`}
+        onDragOver={(e) => {
+          e.preventDefault();
+          setDragging(true);
+        }}
+        onDragLeave={() => setDragging(false)}
+        onDrop={(e) => {
+          e.preventDefault();
+          setDragging(false);
+          procesar(e.dataTransfer.files);
+        }}
+        onClick={() => inputRef.current?.click()}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") inputRef.current?.click();
+        }}
+      >
+        <FileUp size={28} strokeWidth={1.6} />
+        <strong>Arrastre archivos .docx</strong>
+        <span>Diagnóstico, indicadores, política u otros informes internos.</span>
+      </div>
+
+      {error ? (
+        <p className="error-banner">
+          <AlertCircle size={16} />
+          {error}
+        </p>
+      ) : null}
+
+      {!wordFuentes.length ? null : (
+        <>
+          <div className="dash">
+            <Kpi value={wordFuentes.length} label="fuentes Word" />
+            <Kpi value={conteo.cumple} label="pilares en cumple" tone="ok" />
+            <Kpi value={conteo.parcial} label="pilares parciales" tone="warn" />
+            <Kpi value={conteo.ausente} label="pilares ausentes" tone="bad" />
+          </div>
+
+          <div className="grid grid-2" style={{ marginBottom: 16 }}>
+            {wordFuentes.map((f) => (
               <article className="card fuente-card" key={f.id}>
-                <span className="tag">{f.tipo}</span>
-                <h3>{f.documento}</h3>
-                <p style={{ margin: 0 }}>{f.naturaleza}</p>
+                <div className="fuente-head">
+                  <span className="tag">Word · {formatoPeso(f.size)}</span>
+                  <button className="btn-icon" type="button" onClick={() => removeWordFuente(f.id)} aria-label="Quitar">
+                    <Trash2 size={16} />
+                  </button>
+                </div>
+                <h3>{f.name}</h3>
+                <p className="muted" style={{ margin: 0 }}>
+                  {f.tables.length} tablas · {f.text.split(/\s+/).filter(Boolean).length} palabras
+                </p>
+                <button
+                  className="btn btn-ghost"
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setAbierto(abierto === f.id ? null : f.id);
+                  }}
+                >
+                  {abierto === f.id ? "Ocultar" : "Ver extracto"}
+                </button>
+                {abierto === f.id ? (
+                  <div className="word-doc">
+                    {f.tables.map((rows, i) => <TablaWord key={i} rows={rows} />)}
+                    <div
+                      className={`word-html ${f.tables.length ? "hide-tables" : ""}`}
+                      dangerouslySetInnerHTML={{ __html: f.html }}
+                    />
+                  </div>
+                ) : null}
               </article>
             ))}
           </div>
 
-          <h3 className="serif">Semáforo frente a NIIF S1 / S2</h3>
-          <div className="table-wrap">
-            <table className="data">
-              <thead>
-                <tr>
-                  <th>Pilar</th>
-                  <th>Estado</th>
-                  <th>Observación</th>
-                </tr>
-              </thead>
-              <tbody>
-                {diagnostico.pilares.map((p) => (
-                  <tr key={p.id}>
-                    <td>{p.nombre}</td>
-                    <td>
-                      <span className={`semaforo ${estadoClass(p.estado)}`}>
-                        <span className="dot" />
-                        {estadoLabel(p.estado)}
-                      </span>
-                    </td>
-                    <td>{p.observacion}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <p className="group-title">Semáforo NIIF S1 / S2</p>
+          <div className="grid grid-7">
+            {diagnostico.pilares.map((p) => (
+              <article className={`card dash-card ${p.estado}`} key={p.id}>
+                <span className={`semaforo ${estadoClass(p.estado)}`}>
+                  <span className="dot" />
+                  {estadoLabel(p.estado)}
+                </span>
+                <h3>{p.nombre}</h3>
+                <div className="meter"><i /></div>
+              </article>
+            ))}
           </div>
 
-          <p className="card" style={{ marginTop: 16 }}>
-            {diagnostico.sintesis}
-          </p>
-
-          {diagnostico.secciones.map((s) => (
-            <article className="card" key={s.id} style={{ marginTop: 12 }}>
-              <h3>{s.titulo}</h3>
-              <p>{s.narrativa}</p>
-              {s.hallazgo ? <p><strong>Hallazgo clave. </strong>{s.hallazgo}</p> : null}
-              {s.tiene?.length || s.falta?.length ? (
-                <div className="split">
-                  {s.tiene?.length ? (
-                    <div className="card ok">
-                      <h4>Sí tiene / cumple</h4>
-                      <ul className="list">
-                        {s.tiene.map((t) => <li key={t}>{t}</li>)}
-                      </ul>
-                    </div>
-                  ) : null}
-                  {s.falta?.length ? (
-                    <div className="card no">
-                      <h4>No tiene / le falta</h4>
-                      <ul className="list">
-                        {s.falta.map((t) => <li key={t}>{t}</li>)}
-                      </ul>
-                    </div>
-                  ) : null}
-                </div>
-              ) : null}
-            </article>
-          ))}
-
-          <h3 className="serif" style={{ marginTop: 22 }}>Indicadores del SGA (mayo 2026)</h3>
+          <p className="group-title">Indicadores SGA</p>
+          <div className="dash">
+            {diagnostico.indicadores.slice(0, 4).map((i) => (
+              <Kpi key={i.id} value={i.dato.split(" ")[0]} label={i.nombre} hint={i.frecuencia} />
+            ))}
+          </div>
           <div className="table-wrap">
             <table className="data">
               <thead>
                 <tr>
                   <th>Indicador</th>
-                  <th>Dato más reciente</th>
+                  <th>Dato</th>
                   <th>Frecuencia</th>
                 </tr>
               </thead>
@@ -124,6 +225,36 @@ export default function Diagnostico() {
               </tbody>
             </table>
           </div>
+
+          <p className="group-title">Detalle por pilar</p>
+          {diagnostico.secciones.map((s) => (
+            <details className="accordion" key={s.id} style={{ marginBottom: 10 }}>
+              <summary>{s.titulo}</summary>
+              <div className="acc-body">
+                <p className="clamp">{s.narrativa}</p>
+                {s.tiene?.length || s.falta?.length ? (
+                  <div className="split" style={{ marginTop: 10 }}>
+                    {s.tiene?.length ? (
+                      <div className="card ok">
+                        <h4>Cumple ({s.tiene.length})</h4>
+                        <ul className="list">
+                          {s.tiene.map((t) => <li key={t}>{t}</li>)}
+                        </ul>
+                      </div>
+                    ) : null}
+                    {s.falta?.length ? (
+                      <div className="card no">
+                        <h4>Brecha ({s.falta.length})</h4>
+                        <ul className="list">
+                          {s.falta.map((t) => <li key={t}>{t}</li>)}
+                        </ul>
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
+              </div>
+            </details>
+          ))}
         </>
       )}
     </StepShell>

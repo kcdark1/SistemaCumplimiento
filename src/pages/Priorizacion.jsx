@@ -1,4 +1,5 @@
 import StepShell from "../components/StepShell";
+import Kpi from "../components/Kpi";
 import { useWorkflow } from "../context/WorkflowContext";
 import { countByEje } from "../utils/helpers";
 
@@ -11,20 +12,20 @@ export default function Priorizacion() {
 
   return (
     <StepShell
-      kicker="Paso 02"
+      kicker="Paso 02 · Dashboard"
       title="Priorización"
-      lead="De las fuentes cargadas se seleccionan los factores ambientales, sociales y de gobernanza (ASG) relevantes para la FTTG. Esa selección alimenta la matriz y el informe."
+      lead="Seleccione los factores ASG que alimentan la matriz y el informe."
       actions={
         <button className="btn btn-primary" type="button" onClick={confirmar} disabled={!selectedIds.length}>
           Confirmar factores ({selectedIds.length})
         </button>
       }
     >
-      <div className="stats">
-        <div className="stat"><b>{selectedIds.length}</b><span>factores priorizados</span></div>
-        <div className="stat"><b>{counts.E}</b><span>ambientales (E)</span></div>
-        <div className="stat"><b>{counts.S}</b><span>sociales (S)</span></div>
-        <div className="stat"><b>{counts.G}</b><span>gobernanza (G)</span></div>
+      <div className="dash">
+        <Kpi value={selectedIds.length} label="factores priorizados" />
+        <Kpi value={counts.E} label="ambientales (E)" tone="ok" />
+        <Kpi value={counts.S} label="sociales (S)" />
+        <Kpi value={counts.G} label="gobernanza (G)" />
       </div>
 
       <div className="actions" style={{ justifyContent: "flex-start", marginBottom: 8 }}>
@@ -53,7 +54,7 @@ export default function Priorizacion() {
                 />
                 <div>
                   <h3>{f.nombre}</h3>
-                  <p style={{ margin: "4px 0 0" }}>{f.justificacion}</p>
+                  <p className="clamp" style={{ margin: "4px 0 0" }}>{f.justificacion}</p>
                   <p className="muted" style={{ margin: "8px 0 0" }}>
                     NIIF {f.niif} · Pilar {f.pilar}
                   </p>

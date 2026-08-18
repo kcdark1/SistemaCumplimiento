@@ -1,10 +1,10 @@
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 
-const BLUE = [30, 95, 154];
-const GOLD = [143, 154, 50];
-const INK = [22, 50, 79];
-const MUTED = [80, 100, 120];
+const GREEN = [0, 76, 33];
+const GREEN_MID = [20, 151, 77];
+const INK = [0, 76, 33];
+const MUTED = [61, 107, 80];
 
 const NIVEL_RGB = {
   Bajo: [215, 232, 184],
@@ -20,7 +20,7 @@ const NIVEL_RGB = {
 };
 
 function header(doc, title, subtitle, gold = false) {
-  const [r, g, b] = gold ? GOLD : BLUE;
+  const [r, g, b] = gold ? GREEN_MID : GREEN;
   doc.setFillColor(r, g, b);
   doc.rect(0, 0, doc.internal.pageSize.getWidth(), 28, "F");
   doc.setTextColor(255, 255, 255);
@@ -79,7 +79,7 @@ export function descargarMatriz({ matriz, riesgos, oportunidades, factores }) {
   autoTable(doc, {
     startY: 50,
     styles: { fontSize: 7.2, cellPadding: 2, valign: "top", textColor: INK },
-    headStyles: { fillColor: BLUE, textColor: 255, fontStyle: "bold" },
+    headStyles: { fillColor: GREEN, textColor: 255, fontStyle: "bold" },
     head: [[
       "Categoría / Tipo",
       "Riesgo específico de la FTTG",
@@ -128,7 +128,7 @@ export function descargarMatriz({ matriz, riesgos, oportunidades, factores }) {
   autoTable(doc, {
     startY: y + 4,
     styles: { fontSize: 8, cellPadding: 2.2, valign: "top", textColor: INK },
-    headStyles: { fillColor: GOLD, textColor: 255, fontStyle: "bold" },
+    headStyles: { fillColor: GREEN_MID, textColor: 255, fontStyle: "bold" },
     head: [["Categoría / Tipo", "Oportunidad específica de la FTTG", "Plazo", "Probabilidad", "Nivel", "Impacto"]],
     body: oportunidades.map((o) => [
       `${o.categoria} | ${o.tipo}`,
@@ -162,7 +162,7 @@ export function descargarMatriz({ matriz, riesgos, oportunidades, factores }) {
   autoTable(doc, {
     startY: y + 12,
     styles: { fontSize: 9, halign: "center", valign: "middle", textColor: INK },
-    headStyles: { fillColor: BLUE, textColor: 255 },
+    headStyles: { fillColor: GREEN, textColor: 255 },
     head: [["Probabilidad \\ Impacto", ...matriz.heatmap.impactos]],
     body: matriz.heatmap.probabilidades.map((p, i) => [p, ...matriz.heatmap.celdas[i]]),
     didParseCell: (data) => {
@@ -186,7 +186,7 @@ export function descargarMatriz({ matriz, riesgos, oportunidades, factores }) {
   autoTable(doc, {
     startY: y + 4,
     styles: { fontSize: 8, cellPadding: 2, textColor: INK },
-    headStyles: { fillColor: BLUE, textColor: 255 },
+    headStyles: { fillColor: GREEN, textColor: 255 },
     head: [["Criterio", "Nivel", "Descripción"]],
     body: matriz.criterios.map((c) => [c.criterio, c.nivel, c.descripcion]),
     didParseCell: (data) => {
@@ -205,7 +205,7 @@ export function descargarInforme({ informe, diagnostico, factores, riesgos }) {
   const doc = new jsPDF({ unit: "mm", format: "a4" });
   const w = doc.internal.pageSize.getWidth();
 
-  doc.setFillColor(...BLUE);
+  doc.setFillColor(...GREEN);
   doc.rect(0, 0, w, 297, "F");
   doc.setFillColor(247, 251, 254);
   doc.rect(0, 168, w, 129, "F");
@@ -257,7 +257,7 @@ export function descargarInforme({ informe, diagnostico, factores, riesgos }) {
       }
       doc.setFont("helvetica", "bold");
       doc.setFontSize(11);
-      doc.setTextColor(...BLUE);
+      doc.setTextColor(...GREEN);
       doc.text(p.titulo, 14, y);
       y += 5;
       doc.setFont("helvetica", "italic");
@@ -282,7 +282,7 @@ export function descargarInforme({ informe, diagnostico, factores, riesgos }) {
       autoTable(doc, {
         startY: y,
         styles: { fontSize: 8, textColor: INK },
-        headStyles: { fillColor: BLUE, textColor: 255 },
+        headStyles: { fillColor: GREEN, textColor: 255 },
         head: [["Indicador", "Dato más reciente", "Frecuencia"]],
         body: diagnostico.indicadores.map((i) => [i.nombre, i.dato, i.frecuencia]),
       });
@@ -297,7 +297,7 @@ export function descargarInforme({ informe, diagnostico, factores, riesgos }) {
       autoTable(doc, {
         startY: y,
         styles: { fontSize: 7.4, textColor: INK },
-        headStyles: { fillColor: BLUE, textColor: 255 },
+        headStyles: { fillColor: GREEN, textColor: 255 },
         head: [["Categoría", "Riesgo", "Prob.", "Nivel", "Impacto"]],
         body: riesgos.map((r) => [r.categoria, r.descripcion, r.probabilidad, r.nivel, r.impacto]),
       });
@@ -335,7 +335,7 @@ export function descargarAseguramiento({ aseguramiento, diagnostico, factores, e
   const doc = new jsPDF({ unit: "mm", format: "a4" });
   const w = doc.internal.pageSize.getWidth();
 
-  doc.setFillColor(...GOLD);
+  doc.setFillColor(...GREEN_MID);
   doc.rect(0, 0, w, 36, "F");
   doc.setTextColor(255, 255, 255);
   doc.setFont("helvetica", "bold");
@@ -351,7 +351,7 @@ export function descargarAseguramiento({ aseguramiento, diagnostico, factores, e
   const block = (label, text) => {
     doc.setFont("helvetica", "bold");
     doc.setFontSize(11);
-    doc.setTextColor(...GOLD);
+    doc.setTextColor(...GREEN_MID);
     doc.text(label, 14, y);
     y += 6;
     doc.setFont("helvetica", "normal");
@@ -371,7 +371,7 @@ export function descargarAseguramiento({ aseguramiento, diagnostico, factores, e
   );
 
   doc.setFont("helvetica", "bold");
-  doc.setTextColor(...GOLD);
+  doc.setTextColor(...GREEN_MID);
   doc.text("Criterios aplicados", 14, y);
   y += 6;
   doc.setFont("helvetica", "normal");
@@ -383,7 +383,7 @@ export function descargarAseguramiento({ aseguramiento, diagnostico, factores, e
     y = 20;
   }
   doc.setFont("helvetica", "bold");
-  doc.setTextColor(...GOLD);
+  doc.setTextColor(...GREEN_MID);
   doc.text("Trabajo realizado", 14, y);
   y += 6;
   doc.setFont("helvetica", "normal");
@@ -394,7 +394,7 @@ export function descargarAseguramiento({ aseguramiento, diagnostico, factores, e
   header(doc, aseguramiento.titulo, "Limitaciones, conclusión y firmas", true);
   y = 42;
   doc.setFont("helvetica", "bold");
-  doc.setTextColor(...GOLD);
+  doc.setTextColor(...GREEN_MID);
   doc.text("Limitaciones", 14, y);
   y += 6;
   doc.setFont("helvetica", "normal");
@@ -403,7 +403,7 @@ export function descargarAseguramiento({ aseguramiento, diagnostico, factores, e
 
   y += 4;
   doc.setFont("helvetica", "bold");
-  doc.setTextColor(...GOLD);
+  doc.setTextColor(...GREEN_MID);
   doc.text("Conclusión", 14, y);
   y += 7;
   doc.setFont("helvetica", "normal");
@@ -421,7 +421,7 @@ export function descargarAseguramiento({ aseguramiento, diagnostico, factores, e
   autoTable(doc, {
     startY: y,
     styles: { fontSize: 9, textColor: INK },
-    headStyles: { fillColor: GOLD, textColor: 255 },
+    headStyles: { fillColor: GREEN_MID, textColor: 255 },
     head: [["Rol", "Nombre", "Entidad"]],
     body: aseguramiento.firmas.map((f) => [f.rol, f.nombre, f.entidad]),
   });

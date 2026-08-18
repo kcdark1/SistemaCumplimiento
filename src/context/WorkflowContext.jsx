@@ -20,9 +20,20 @@ const WorkflowContext = createContext(null);
 export function WorkflowProvider({ children }) {
   const defaults = factores.filter((f) => f.preseleccionado).map((f) => f.id);
   const [step, setStep] = useState(0);
-  const [fuentesCargadas, setFuentesCargadas] = useState(false);
+  const [wordFuentes, setWordFuentes] = useState([]);
   const [selectedIds, setSelectedIds] = useState(defaults);
   const [completed, setCompleted] = useState(new Set());
+  const fuentesCargadas = wordFuentes.length > 0;
+
+  const addWordFuentes = (docs) =>
+    setWordFuentes((prev) => {
+      const names = new Set(prev.map((d) => d.name));
+      const extra = docs.filter((d) => !names.has(d.name));
+      return extra.length ? [...prev, ...extra] : prev;
+    });
+
+  const removeWordFuente = (id) =>
+    setWordFuentes((prev) => prev.filter((d) => d.id !== id));
 
   const mark = (id) =>
     setCompleted((prev) => {
@@ -69,7 +80,9 @@ export function WorkflowProvider({ children }) {
     step,
     setStep,
     fuentesCargadas,
-    setFuentesCargadas,
+    wordFuentes,
+    addWordFuentes,
+    removeWordFuente,
     selectedIds,
     setSelectedIds,
     toggleFactor,

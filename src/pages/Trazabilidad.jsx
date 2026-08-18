@@ -1,28 +1,38 @@
 import StepShell from "../components/StepShell";
+import Kpi from "../components/Kpi";
 import { useWorkflow } from "../context/WorkflowContext";
 
 export default function Trazabilidad() {
-  const { trazabilidad, evidenciasFiltradas, diagnostico, mark } = useWorkflow();
+  const { trazabilidad, evidenciasFiltradas, diagnostico, wordFuentes, mark } = useWorkflow();
   const fuentes = Object.fromEntries(diagnostico.fuentes.map((f) => [f.id, f]));
   const responsables = Object.fromEntries(trazabilidad.responsables.map((r) => [r.id, r]));
+  const brechas = evidenciasFiltradas.filter((i) => i.estado.startsWith("Brecha")).length;
+  const ok = evidenciasFiltradas.length - brechas;
 
   return (
     <StepShell
-      kicker="Paso 05"
+      kicker="Paso 05 · Dashboard"
       title="Trazabilidad"
-      lead="Cada indicador material queda atado a una fuente, un responsable de elaboración y un revisor. Sin evidencia y sin dueño, el dato no entra al aseguramiento."
+      lead="Evidencia, fuente y responsable por indicador. Sin dueño, el dato no entra al aseguramiento."
       actions={
         <button className="btn btn-primary" type="button" onClick={() => mark(5)}>
           Registrar trazabilidad
         </button>
       }
     >
+      <div className="dash">
+        <Kpi value={evidenciasFiltradas.length} label="ítems de evidencia" />
+        <Kpi value={ok} label="con respaldo" tone="ok" />
+        <Kpi value={brechas} label="brechas" tone="bad" />
+        <Kpi value={wordFuentes.length || diagnostico.fuentes.length} label="fuentes" />
+      </div>
+
       <div className="grid grid-4" style={{ marginBottom: 16 }}>
         {trazabilidad.responsables.map((r) => (
-          <article className="card" key={r.id}>
+          <article className="card dash-card" key={r.id}>
             <span className="tag">{r.area}</span>
             <h3>{r.cargo}</h3>
-            <p style={{ margin: 0 }}>{r.rol}</p>
+            <p className="clamp" style={{ margin: 0 }}>{r.rol}</p>
           </article>
         ))}
       </div>
@@ -33,9 +43,7 @@ export default function Trazabilidad() {
             <tr>
               <th>Indicador</th>
               <th>Dato</th>
-              <th>Fuente</th>
               <th>Responsable</th>
-              <th>Revisor</th>
               <th>Estado</th>
             </tr>
           </thead>
@@ -44,12 +52,10 @@ export default function Trazabilidad() {
               <tr key={item.id}>
                 <td>
                   <strong>{item.indicador}</strong>
-                  <div className="muted">{item.notas}</div>
+                  <div className="muted">{fuentes[item.fuenteId]?.documento}</div>
                 </td>
                 <td>{item.dato}</td>
-                <td>{fuentes[item.fuenteId]?.documento}</td>
                 <td>{responsables[item.responsableId]?.cargo}</td>
-                <td>{responsables[item.revisorId]?.cargo}</td>
                 <td>
                   <span className={`tag ${item.estado.startsWith("Brecha") ? "tag-brecha" : "tag-ok"}`}>
                     {item.estado}

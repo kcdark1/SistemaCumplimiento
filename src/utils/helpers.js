@@ -35,3 +35,17 @@ export function countByEje(factores) {
     { E: 0, S: 0, G: 0 }
   );
 }
+
+export function formatoPeso(bytes) {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+export function clasificarEstado(texto) {
+  const t = String(texto || "").toLowerCase();
+  if (t.includes("parcial")) return "parcial";
+  if (/(no cumple|ausente|no tiene)/.test(t)) return "ausente";
+  if (/\bcumple\b/.test(t)) return "cumple";
+  return null;
+}

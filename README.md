@@ -2,11 +2,11 @@
 
 Aplicación web del ciclo de seis pasos para la Fundación Terminal Terrestre de Guayaquil: diagnóstico de fuentes, priorización ASG, matriz de riesgos, informe NIIF S1/S2, trazabilidad y declaración de confiabilidad.
 
-Los datos están embebidos en JSON (`src/data`). No requiere backend.
+Los datos de matriz, informe y aseguramiento están embebidos en la aplicación (`src/data`). El diagnóstico se alimenta con documentos Word. No requiere backend.
 
 ## Flujo
 
-1. **Diagnóstico** — carga las cinco fuentes internas y el semáforo frente a NIIF S1/S2.
+1. **Diagnóstico** — carga de fuentes en Word (`.docx`): el sistema extrae tablas y narrativa, y las contrasta con NIIF S1/S2.
 2. **Priorización** — selección de factores ASG relevantes.
 3. **Matriz de riesgos** — semáforo probabilidad/impacto, mapa de calor y PDF.
 4. **Diseño de reporte** — informe bajo los cuatro pilares + PDF.

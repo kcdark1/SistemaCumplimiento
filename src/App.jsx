@@ -42,8 +42,8 @@ export default function App() {
         <section className="hero">
           <h1>Sistema de Aseguramiento</h1>
           <p>
-            El marco que la terminal necesita para anticipar riesgos ASG, dejar evidencia
-            trazable y emitir una declaración de confiabilidad bajo los cuatro pilares de NIIF S1 y NIIF S2.
+            Anticipar riesgos ASG, dejar evidencia trazable y emitir una declaración
+            de confiabilidad bajo NIIF S1 y NIIF S2.
           </p>
           <CycleNav
             steps={STEPS}

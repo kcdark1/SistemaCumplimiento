@@ -1,5 +1,6 @@
 import { Download } from "lucide-react";
 import StepShell from "../components/StepShell";
+import Kpi from "../components/Kpi";
 import { useWorkflow } from "../context/WorkflowContext";
 
 export default function DisenoReporte() {
@@ -18,41 +19,49 @@ export default function DisenoReporte() {
 
   return (
     <StepShell
-      kicker="Paso 04"
+      kicker="Paso 04 · Dashboard"
       title="Diseño de reporte"
-      lead="El informe se arma sobre los cuatro pilares de NIIF S1/S2 —gobernanza, estrategia, gestión de riesgos, métricas y metas— más alcance, juicios, presentación y transición."
+      lead="Cuatro pilares NIIF S1/S2. El detalle va al PDF; aquí solo el tablero de estructura."
       actions={
         <button className="btn btn-primary" type="button" onClick={exportar}>
           <Download size={16} />
-          Generar informe PDF
+          Generar PDF
         </button>
       }
     >
-      <p className="card">{informe.declaracionReferencia}</p>
+      <div className="dash">
+        <Kpi value="4" label="pilares core" />
+        <Kpi value={informe.capitulos.length} label="capítulos" />
+        <Kpi value={selectedFactores.length} label="factores ASG" tone="ok" />
+        <Kpi value={riesgosFiltrados.length} label="riesgos en informe" tone="warn" />
+      </div>
 
-      <div className="grid grid-4" style={{ margin: "18px 0" }}>
+      <div className="grid grid-4" style={{ marginBottom: 16 }}>
         {informe.pilaresCore.map((p) => (
-          <article className="card pilar-card" key={p.id}>
+          <article className="card pilar-card dash-card" key={p.id}>
             <p className="num">{p.numero}</p>
             <h3>{p.nombre}</h3>
-            <p>{p.pregunta}</p>
-            <p className="muted">{p.referencias.join(" · ")}</p>
+            <p className="clamp">{p.pregunta}</p>
+            <span className="tag">{p.referencias[0]}</span>
           </article>
         ))}
       </div>
 
       {informe.capitulos.map((cap) => (
-        <article className="card" key={cap.id} style={{ marginTop: 12 }}>
-          <p className="kicker">Capítulo {cap.numero}</p>
-          <h3>{cap.titulo}</h3>
-          {cap.puntos.map((p) => (
-            <div key={p.titulo} style={{ marginTop: 12 }}>
-              <strong>{p.titulo}</strong>
-              <p className="muted" style={{ margin: "4px 0" }}>{p.norma}</p>
-              <p style={{ margin: 0 }}>{p.contenido}</p>
-            </div>
-          ))}
-        </article>
+        <details className="accordion" key={cap.id} style={{ marginBottom: 10 }}>
+          <summary>Cap. {cap.numero} · {cap.titulo}</summary>
+          <div className="acc-body">
+            {cap.puntos.map((p) => (
+              <div className="check-item" key={p.titulo}>
+                <span className="check-dot" />
+                <div>
+                  <strong>{p.titulo}</strong>
+                  <p className="muted" style={{ margin: "2px 0 0" }}>{p.norma}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </details>
       ))}
     </StepShell>
   );
