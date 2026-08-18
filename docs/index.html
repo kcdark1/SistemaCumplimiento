@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sistema de aseguramiento de sostenibilidad FTTG bajo NIIF S1 y NIIF S2."
+    />
+    <title>Sistema de Aseguramiento · FTTG</title>
+    <script>
+      (function () {
+        if (!/github\.io$/.test(location.hostname)) return;
+        if (location.pathname.indexOf("/docs/") !== -1) return;
+        var scripts = document.querySelectorAll("script[src]");
+        for (var i = 0; i < scripts.length; i++) {
+          if (/\/src\/main\.jsx$/.test(scripts[i].getAttribute("src") || "")) {
+            location.replace(location.pathname.replace(/\/?$/, "/") + "docs/");
+            return;
+          }
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,720&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="./assets/index-ZNWNQEtW.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BH_Y8yHC.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

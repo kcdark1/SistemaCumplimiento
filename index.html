@@ -9,6 +9,19 @@
       content="Sistema de aseguramiento de sostenibilidad FTTG bajo NIIF S1 y NIIF S2."
     />
     <title>Sistema de Aseguramiento · FTTG</title>
+    <script>
+      (function () {
+        if (!/github\.io$/.test(location.hostname)) return;
+        if (location.pathname.indexOf("/docs/") !== -1) return;
+        var scripts = document.querySelectorAll("script[src]");
+        for (var i = 0; i < scripts.length; i++) {
+          if (/\/src\/main\.jsx$/.test(scripts[i].getAttribute("src") || "")) {
+            location.replace(location.pathname.replace(/\/?$/, "/") + "docs/");
+            return;
+          }
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

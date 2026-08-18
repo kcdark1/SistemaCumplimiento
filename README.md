@@ -22,11 +22,16 @@ npm run dev
 
 ## GitHub Pages
 
-Tras el primer workflow exitoso se crea la rama `gh-pages`. Actívela una sola vez:
+Enlace:
 
-1. Abra [Settings → Pages](https://github.com/kcdark1/SistemaCumplimiento/settings/pages).
-2. En **Build and deployment → Source** elija **Deploy from a branch**.
-3. Branch: `gh-pages` · folder: `/ (root)` · **Save**.
-4. La web queda en `https://kcdark1.github.io/SistemaCumplimiento/`.
+**https://kcdark1.github.io/SistemaCumplimiento/**
 
-Cada push a `main` o `master` vuelve a publicar. Si el repositorio es privado, Pages requiere GitHub Pro.
+o, si Pages está sirviendo la rama `main`:
+
+**https://kcdark1.github.io/SistemaCumplimiento/docs/**
+
+En [Settings → Pages](https://github.com/kcdark1/SistemaCumplimiento/settings/pages) use una de estas dos opciones:
+
+- **Deploy from a branch** → `gh-pages` → `/ (root)`
+- **Deploy from a branch** → `main` → `/docs`
+
