@@ -22,9 +22,11 @@ npm run dev
 
 ## GitHub Pages
 
-1. Suba el repositorio a GitHub.
-2. En **Settings → Pages**, elija **GitHub Actions** como fuente.
-3. El workflow `.github/workflows/deploy.yml` construye y publica en cada push a `main` o `master`.
-4. La URL queda en `https://<usuario>.github.io/<repositorio>/`.
+Tras el primer workflow exitoso se crea la rama `gh-pages`. Actívela una sola vez:
 
-Si el repositorio se llama `<usuario>.github.io`, el base path se resuelve como `/`.
+1. Abra [Settings → Pages](https://github.com/kcdark1/SistemaCumplimiento/settings/pages).
+2. En **Build and deployment → Source** elija **Deploy from a branch**.
+3. Branch: `gh-pages` · folder: `/ (root)` · **Save**.
+4. La web queda en `https://kcdark1.github.io/SistemaCumplimiento/`.
+
+Cada push a `main` o `master` vuelve a publicar. Si el repositorio es privado, Pages requiere GitHub Pro.
